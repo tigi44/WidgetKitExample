@@ -26,6 +26,7 @@
 		0EB0166A25E7848800C586E2 /* EditableWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0166525E7848800C586E2 /* EditableWidget.intentdefinition */; };
 		0EB0166D25E7848800C586E2 /* EditableWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0EB0165F25E7848800C586E2 /* EditableWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0EB0167725E784A100C586E2 /* AirWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0167625E784A100C586E2 /* AirWidget.swift */; };
+		0EB0167F25E78A5700C586E2 /* WeatherLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0167E25E78A5700C586E2 /* WeatherLocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		0EB0166625E7848800C586E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB0166825E7848800C586E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB0167625E784A100C586E2 /* AirWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirWidget.swift; sourceTree = "<group>"; };
+		0EB0167E25E78A5700C586E2 /* WeatherLocalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocalData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 		0EB0164A25E7847900C586E2 /* WeatherWidget */ = {
 			isa = PBXGroup;
 			children = (
+				0EB0167D25E78A4900C586E2 /* WeatherData */,
 				0EB0164B25E7847900C586E2 /* WeatherWidget.swift */,
 				0EB0167625E784A100C586E2 /* AirWidget.swift */,
 				0EB0164D25E7847A00C586E2 /* Assets.xcassets */,
@@ -236,6 +239,14 @@
 				0EB0166825E7848800C586E2 /* Info.plist */,
 			);
 			path = EditableWidget;
+			sourceTree = "<group>";
+		};
+		0EB0167D25E78A4900C586E2 /* WeatherData */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0167E25E78A5700C586E2 /* WeatherLocalData.swift */,
+			);
+			path = WeatherData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB0167725E784A100C586E2 /* AirWidget.swift in Sources */,
+				0EB0167F25E78A5700C586E2 /* WeatherLocalData.swift in Sources */,
 				0EB0164C25E7847900C586E2 /* WeatherWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
