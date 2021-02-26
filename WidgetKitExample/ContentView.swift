@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+        
+        Button(action: {
+            WidgetCenter.shared.reloadAllTimelines()
+        }, label: {
+            Text("reload all widget")
+        })
     }
 }
 
