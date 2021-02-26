@@ -44,7 +44,21 @@ struct EditableWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack(spacing: 20) {
+            Text(entry.configuration.parameter ?? "editable")
+            
+            switch entry.configuration.enumparameter {
+            case .unknown:
+                Text("unknown enum")
+            case .first:
+                Text("first enum")
+            case .second:
+                Text("second enum")
+            default:
+                Text("default enum")
+
+            }
+        }
     }
 }
 
@@ -56,8 +70,8 @@ struct EditableWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             EditableWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Editable Widget")
+        .description("This is an editable widget.")
     }
 }
 

@@ -3,17 +3,61 @@
 <plist version="1.0">
 <dict>
 	<key>INEnums</key>
-	<array/>
+	<array>
+		<dict>
+			<key>INEnumDisplayName</key>
+			<string>CustomEnum</string>
+			<key>INEnumDisplayNameID</key>
+			<string>kAXU6J</string>
+			<key>INEnumGeneratesHeader</key>
+			<true/>
+			<key>INEnumName</key>
+			<string>CustomEnum</string>
+			<key>INEnumType</key>
+			<string>Regular</string>
+			<key>INEnumValues</key>
+			<array>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>unknown</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>tFPtCY</string>
+					<key>INEnumValueName</key>
+					<string>unknown</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>first</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>cruFiC</string>
+					<key>INEnumValueIndex</key>
+					<integer>1</integer>
+					<key>INEnumValueName</key>
+					<string>first</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>second</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>qNk7Ze</string>
+					<key>INEnumValueIndex</key>
+					<integer>2</integer>
+					<key>INEnumValueName</key>
+					<string>second</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.2</string>
 	<key>INIntentDefinitionNamespace</key>
 	<string>88xZPY</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>20A294</string>
+	<string>20D74</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>12A6144</string>
+	<string>12D4e</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>12.0</string>
+	<string>12.4</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -25,8 +69,93 @@
 			<true/>
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
+			<key>INIntentLastParameterTag</key>
+			<integer>8</integer>
 			<key>INIntentName</key>
 			<string>Configuration</string>
+			<key>INIntentParameters</key>
+			<array>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Parameter</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>5WYgjV</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataCapitalization</key>
+						<string>Sentences</string>
+						<key>INIntentParameterMetadataDefaultValueID</key>
+						<string>iyunAW</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>parameter</string>
+					<key>INIntentParameterSupportsDynamicEnumeration</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>6</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>EnumParam</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>HpSBH5</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>CustomEnum</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>88xZPY</string>
+					<key>INIntentParameterName</key>
+					<string>enumparameter</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${enumparameter}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>mYXXt0</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${enumparameter}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>xYxBTr</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterTag</key>
+					<integer>8</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
+			</array>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>

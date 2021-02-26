@@ -27,6 +27,10 @@
 		0EB0166D25E7848800C586E2 /* EditableWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0EB0165F25E7848800C586E2 /* EditableWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0EB0167725E784A100C586E2 /* AirWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0167625E784A100C586E2 /* AirWidget.swift */; };
 		0EB0167F25E78A5700C586E2 /* WeatherLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0167E25E78A5700C586E2 /* WeatherLocalData.swift */; };
+		0EB016B525E89EC300C586E2 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB0169925E89E6C00C586E2 /* Intents.framework */; };
+		0EB016B825E89EC400C586E2 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB016B725E89EC400C586E2 /* IntentHandler.swift */; };
+		0EB016BC25E89EC400C586E2 /* EditableIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0EB016B425E89EC300C586E2 /* EditableIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0EB016C625E89F2D00C586E2 /* EditableWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0166525E7848800C586E2 /* EditableWidget.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,13 @@
 			remoteGlobalIDString = 0EB0165E25E7848800C586E2;
 			remoteInfo = EditableWidgetExtension;
 		};
+		0EB016BA25E89EC400C586E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E395E3725DCE52900019BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EB016B325E89EC300C586E2;
+			remoteInfo = EditableIntent;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +79,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				0EB0166D25E7848800C586E2 /* EditableWidgetExtension.appex in Embed App Extensions */,
+				0EB016BC25E89EC400C586E2 /* EditableIntent.appex in Embed App Extensions */,
 				0EB0165225E7847A00C586E2 /* WeatherWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -101,6 +113,10 @@
 		0EB0166825E7848800C586E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB0167625E784A100C586E2 /* AirWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirWidget.swift; sourceTree = "<group>"; };
 		0EB0167E25E78A5700C586E2 /* WeatherLocalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocalData.swift; sourceTree = "<group>"; };
+		0EB0169925E89E6C00C586E2 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		0EB016B425E89EC300C586E2 /* EditableIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditableIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB016B725E89EC400C586E2 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		0EB016B925E89EC400C586E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +159,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EB016B125E89EC300C586E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EB016B525E89EC300C586E2 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -154,6 +178,7 @@
 				0E395E5E25DCE52B00019BAC /* WidgetKitExampleUITests */,
 				0EB0164A25E7847900C586E2 /* WeatherWidget */,
 				0EB0166225E7848800C586E2 /* EditableWidget */,
+				0EB016B625E89EC400C586E2 /* EditableIntent */,
 				0EB0164525E7847900C586E2 /* Frameworks */,
 				0E395E4025DCE52900019BAC /* Products */,
 			);
@@ -167,6 +192,7 @@
 				0E395E5B25DCE52B00019BAC /* WidgetKitExampleUITests.xctest */,
 				0EB0164425E7847900C586E2 /* WeatherWidgetExtension.appex */,
 				0EB0165F25E7848800C586E2 /* EditableWidgetExtension.appex */,
+				0EB016B425E89EC300C586E2 /* EditableIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +240,7 @@
 			children = (
 				0EB0164625E7847900C586E2 /* WidgetKit.framework */,
 				0EB0164825E7847900C586E2 /* SwiftUI.framework */,
+				0EB0169925E89E6C00C586E2 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,6 +276,15 @@
 			path = WeatherData;
 			sourceTree = "<group>";
 		};
+		0EB016B625E89EC400C586E2 /* EditableIntent */ = {
+			isa = PBXGroup;
+			children = (
+				0EB016B725E89EC400C586E2 /* IntentHandler.swift */,
+				0EB016B925E89EC400C586E2 /* Info.plist */,
+			);
+			path = EditableIntent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +302,7 @@
 			dependencies = (
 				0EB0165125E7847A00C586E2 /* PBXTargetDependency */,
 				0EB0166C25E7848800C586E2 /* PBXTargetDependency */,
+				0EB016BB25E89EC400C586E2 /* PBXTargetDependency */,
 			);
 			name = WidgetKitExample;
 			productName = WidgetKitExample;
@@ -342,6 +379,23 @@
 			productReference = 0EB0165F25E7848800C586E2 /* EditableWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		0EB016B325E89EC300C586E2 /* EditableIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EB016BD25E89EC400C586E2 /* Build configuration list for PBXNativeTarget "EditableIntent" */;
+			buildPhases = (
+				0EB016B025E89EC300C586E2 /* Sources */,
+				0EB016B125E89EC300C586E2 /* Frameworks */,
+				0EB016B225E89EC300C586E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditableIntent;
+			productName = EditableIntent;
+			productReference = 0EB016B425E89EC300C586E2 /* EditableIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -368,6 +422,9 @@
 					0EB0165E25E7848800C586E2 = {
 						CreatedOnToolsVersion = 12.4;
 					};
+					0EB016B325E89EC300C586E2 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 				};
 			};
 			buildConfigurationList = 0E395E3A25DCE52900019BAC /* Build configuration list for PBXProject "WidgetKitExample" */;
@@ -388,6 +445,7 @@
 				0E395E5A25DCE52B00019BAC /* WidgetKitExampleUITests */,
 				0EB0164325E7847900C586E2 /* WeatherWidgetExtension */,
 				0EB0165E25E7848800C586E2 /* EditableWidgetExtension */,
+				0EB016B325E89EC300C586E2 /* EditableIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +487,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB0166725E7848800C586E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EB016B225E89EC300C586E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +545,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EB016B025E89EC300C586E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EB016C625E89F2D00C586E2 /* EditableWidget.intentdefinition in Sources */,
+				0EB016B825E89EC400C586E2 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -502,6 +576,11 @@
 			isa = PBXTargetDependency;
 			target = 0EB0165E25E7848800C586E2 /* EditableWidgetExtension */;
 			targetProxy = 0EB0166B25E7848800C586E2 /* PBXContainerItemProxy */;
+		};
+		0EB016BB25E89EC400C586E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EB016B325E89EC300C586E2 /* EditableIntent */;
+			targetProxy = 0EB016BA25E89EC400C586E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -826,6 +905,42 @@
 			};
 			name = Release;
 		};
+		0EB016BE25E89EC400C586E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EditableIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi44.WidgetKitExample.EditableIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0EB016BF25E89EC400C586E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EditableIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigi44.WidgetKitExample.EditableIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -879,6 +994,15 @@
 			buildConfigurations = (
 				0EB0166F25E7848800C586E2 /* Debug */,
 				0EB0167025E7848800C586E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EB016BD25E89EC400C586E2 /* Build configuration list for PBXNativeTarget "EditableIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EB016BE25E89EC400C586E2 /* Debug */,
+				0EB016BF25E89EC400C586E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
