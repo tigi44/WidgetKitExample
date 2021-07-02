@@ -27,7 +27,7 @@ struct WeatherWidgetProvider: TimelineProvider {
 
         let currentDate = Date()
         for secondOffset in 0 ..< 4 {
-            let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset * 10, to: currentDate)!
+            let entryDate = Calendar.current.date(byAdding: .second, value: secondOffset * 2, to: currentDate)!
             let weatherData = WeatherLocalData[secondOffset]
             let entry = WeatherWidgetEntry(date: entryDate, icon: weatherData["icon"] as! String, location: weatherData["location"]  as! String, temperature: weatherData["temp"]  as! Double)
             entries.append(entry)
