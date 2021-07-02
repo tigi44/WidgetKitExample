@@ -19,14 +19,28 @@ class IntentHandler: INExtension {
 }
 
 extension IntentHandler: ConfigurationIntentHandling {
+    
     func provideParameterOptionsCollection(for intent: ConfigurationIntent, with completion: @escaping (INObjectCollection<NSString>?, Error?) -> Void) {
-        var items: [NSString] = []
         
-        items.append("first string")
-        items.append("second string")
-        items.append("third string")
-        items.append("forth string")
+        // no section
+//        var items: [NSString] = []
+//
+//        items.append("first string")
+//        items.append("second string")
+//        items.append("third string")
+//        items.append("forth string")
+//
+//        completion(INObjectCollection(items: items), nil)
         
-        completion(INObjectCollection(items: items), nil)
+        // with sections
+        var firstSectionItems: [NSString] = []
+        var secondSectionItems: [NSString] = []
+        
+        firstSectionItems.append("first string")
+        firstSectionItems.append("second string")
+        secondSectionItems.append("third string")
+        secondSectionItems.append("forth string")
+        
+        completion(INObjectCollection(sections: [INObjectSection(title: "first section", items: firstSectionItems), INObjectSection(title: "second section", items: secondSectionItems)]), nil)
     }
 }
