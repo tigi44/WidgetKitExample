@@ -18,7 +18,7 @@ struct WeatherWidgetProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WeatherWidgetEntry) -> ()) {
-        let entry = WeatherWidgetEntry(date: Date(), icon: "01d", location: "location", temperature: 0)
+        let entry = WeatherWidgetEntry(date: Date(), icon: "sun.max.fill", location: "location", temperature: 0)
         completion(entry)
     }
 
@@ -77,9 +77,10 @@ struct WeatherWidgetEntryView : View {
                 Text(entry.location)
                     .font(.body)
                 
-                Image(entry.icon)
-                    .resizable()
-                    .frame(width: 50, height: 50, alignment: .center)
+                Image(systemName: entry.icon)
+                    .renderingMode(.original)
+                    .font(.title)
+                    .padding(10)
                 
                 Text(String(format: " %.1f °C", entry.temperature))
                     .font(.title)
@@ -87,7 +88,9 @@ struct WeatherWidgetEntryView : View {
                 
                 Spacer()
             }
+            .frame(maxWidth: .infinity)
             .padding(10)
+            .background(Color.primary.opacity(0.1))
         }
     }
     
@@ -103,7 +106,10 @@ struct WeatherWidgetEntryView : View {
         var body: some View {
             HStack(spacing: 20) {
                 
-                Image(entry.icon)
+                Image(systemName: entry.icon)
+                    .renderingMode(.original)
+                    .font(.largeTitle)
+                    .padding(10)
                 
                 VStack(alignment: .leading) {
                     Text(formatter.string(from: entry.date))
@@ -117,7 +123,9 @@ struct WeatherWidgetEntryView : View {
                         .fontWeight(.bold)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(10)
+            .background(Color.primary.opacity(0.1))
         }
     }
     
@@ -164,14 +172,14 @@ struct WeatherWidgetBundle: WidgetBundle {
 
 struct WeatherWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherWidgetEntryView(entry: WeatherWidgetEntry(date: Date(), icon: "01d", location: "location", temperature: 0))
+        WeatherWidgetEntryView(entry: WeatherWidgetEntry(date: Date(), icon: "cloud.sun.rain.fill", location: "location", temperature: 0))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
 
 struct WeatherWidget_Previews_medium: PreviewProvider {
     static var previews: some View {
-        WeatherWidgetEntryView(entry: WeatherWidgetEntry(date: Date(), icon: "01d", location: "location", temperature: 0))
+        WeatherWidgetEntryView(entry: WeatherWidgetEntry(date: Date(), icon: "cloud.sun.rain.fill", location: "location", temperature: 0))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

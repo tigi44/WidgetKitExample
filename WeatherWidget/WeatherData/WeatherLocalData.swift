@@ -10,22 +10,22 @@ import Foundation
 let WeatherLocalData = [
     [
         "location": "seongnam",
-        "icon": "01d",
+        "icon": "sun.max.fill",
         "temp": 24.5,
     ],
     [
         "location": "seongnam",
-        "icon": "02d",
+        "icon": "cloud.sun.fill",
         "temp": 20.9,
     ],
     [
         "location": "seongnam",
-        "icon": "09d",
+        "icon": "cloud.rain.fill",
         "temp": 18.4,
     ],
     [
         "location": "seongnam",
-        "icon": "13d",
+        "icon": "snow",
         "temp": -5.2,
     ],
 ]
