@@ -59,25 +59,32 @@ struct EditableWidgetEntryView : View {
     var body: some View {
         switch family {
         case .accessoryRectangular:
-            ZStack {
+            ZStack(alignment: .leading) {
                 if #available(iOSApplicationExtension 16.0, *) {
                     AccessoryWidgetBackground()
-                }
-                
-                VStack(alignment: .leading) {
-                    Text(entry.configuration.parameter ?? "editable")
                     
-                    switch entry.configuration.enumparameter {
-                    case .unknown:
-                        Text("unknown enum")
-                    case .first:
-                        Text("first enum")
-                    case .second:
-                        Text("second enum")
-                    default:
-                        Text("default enum")
-
+                    HStack(spacing: 10) {
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 5)
+                            .widgetAccentable()
+                        
+                        VStack(alignment: .leading) {
+                            Text(entry.configuration.parameter ?? "editable")
+                            
+                            switch entry.configuration.enumparameter {
+                            case .unknown:
+                                Text("unknown enum")
+                            case .first:
+                                Text("first enum")
+                            case .second:
+                                Text("second enum")
+                            default:
+                                Text("default enum")
+                                
+                            }
+                        }
                     }
+                    .padding()
                 }
             }
         default:
@@ -112,7 +119,11 @@ struct EditableWidget: Widget {
             return [.accessoryRectangular, .systemSmall, .systemMedium, .systemLarge]
 #endif
         } else {
+#if os(watchOS)
+            return []
+#else
             return [.systemSmall, .systemMedium, .systemLarge]
+#endif
         }
     }
     
@@ -136,6 +147,7 @@ struct EditableWidget_Previews: PreviewProvider {
                     .previewDisplayName("accessoryRectangular")
             }
             
+#if os(iOS)
             EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("systemSmall")
@@ -147,6 +159,7 @@ struct EditableWidget_Previews: PreviewProvider {
             EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
                 .previewDisplayName("systemLarge")
+#endif
         }
     }
 }

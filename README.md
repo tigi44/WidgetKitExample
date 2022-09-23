@@ -12,3 +12,6 @@
 
 ## iOS16 Watch Widget
 ![watch_widget_previews](./watch_widget_previews.png)
+
+## Watch Widget Recommendation (Intent Widget)
+![watch_widget_recommendation](./watch_widget_recommendation.png)
