@@ -33,6 +33,18 @@ struct Provider: IntentTimelineProvider {
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
+    
+    
+    @available(iOSApplicationExtension 16.0, *)
+    func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
+        let recommendation = ConfigurationIntent()
+        recommendation.parameter = "recommendation"
+        recommendation.enumparameter = .first
+        
+        return [recommendation].map { intent in
+            return IntentRecommendation(intent: intent, description: intent.parameter ?? "editable")
+        }
+    }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -42,21 +54,47 @@ struct SimpleEntry: TimelineEntry {
 
 struct EditableWidgetEntryView : View {
     var entry: Provider.Entry
-
+    @Environment(\.widgetFamily) var family
+    
     var body: some View {
-        VStack(spacing: 20) {
-            Text(entry.configuration.parameter ?? "editable")
-            
-            switch entry.configuration.enumparameter {
-            case .unknown:
-                Text("unknown enum")
-            case .first:
-                Text("first enum")
-            case .second:
-                Text("second enum")
-            default:
-                Text("default enum")
+        switch family {
+        case .accessoryRectangular:
+            ZStack {
+                if #available(iOSApplicationExtension 16.0, *) {
+                    AccessoryWidgetBackground()
+                }
+                
+                VStack(alignment: .leading) {
+                    Text(entry.configuration.parameter ?? "editable")
+                    
+                    switch entry.configuration.enumparameter {
+                    case .unknown:
+                        Text("unknown enum")
+                    case .first:
+                        Text("first enum")
+                    case .second:
+                        Text("second enum")
+                    default:
+                        Text("default enum")
 
+                    }
+                }
+            }
+        default:
+            VStack(spacing: 20) {
+                Text(entry.configuration.parameter ?? "editable")
+                
+                switch entry.configuration.enumparameter {
+                case .unknown:
+                    Text("unknown enum")
+                case .first:
+                    Text("first enum")
+                case .second:
+                    Text("second enum")
+                default:
+                    Text("default enum")
+
+                }
             }
         }
     }
@@ -66,18 +104,49 @@ struct EditableWidgetEntryView : View {
 struct EditableWidget: Widget {
     let kind: String = "EditableWidget"
 
+    var supportedFamilies: [WidgetFamily] {
+        if #available(iOSApplicationExtension 16.0, *) {
+#if os(watchOS)
+            return [.accessoryRectangular]
+#else
+            return [.accessoryRectangular, .systemSmall, .systemMedium, .systemLarge]
+#endif
+        } else {
+            return [.systemSmall, .systemMedium, .systemLarge]
+        }
+    }
+    
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             EditableWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Editable Widget")
         .description("This is an editable widget.")
+        .supportedFamilies(self.supportedFamilies)
     }
 }
 
+
 struct EditableWidget_Previews: PreviewProvider {
     static var previews: some View {
-        EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            if #available(iOSApplicationExtension 16.0, *) {
+                EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                    .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+                    .previewDisplayName("accessoryRectangular")
+            }
+            
+            EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .previewDisplayName("systemSmall")
+            
+            EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+                .previewDisplayName("systemMedium")
+            
+            EditableWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .previewDisplayName("systemLarge")
+        }
     }
 }
