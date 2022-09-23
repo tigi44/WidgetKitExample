@@ -260,7 +260,11 @@ struct WeatherWidget: Widget {
             return [.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall, .systemMedium]
 #endif
         } else {
+#if os(watchOS)
+            return []
+#else
             return [.systemSmall, .systemMedium]
+#endif
         }
     }
     

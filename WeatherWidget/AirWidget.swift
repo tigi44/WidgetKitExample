@@ -140,7 +140,11 @@ struct AirWidget: Widget {
         }
         .configurationDisplayName("Air Widget")
         .description("This is an air widget.")
+#if os(watchOS)
+        .supportedFamilies([])
+#else
         .supportedFamilies([.systemSmall, .systemMedium])
+#endif
     }
 }
 
@@ -148,6 +152,8 @@ struct AirWidget: Widget {
 // MARK: - preview
 
 
+#if os(watchOS)
+#else
 struct AirWidget_Previews: PreviewProvider {
     static var previews: some View {
         AirWidgetEntryView(entry: AirWidgetEntry(date: Date(), airConditions: [AirWidgetEntry.AirCondition(dt: Date().timeIntervalSince1970, condition: "GOOD")]))
@@ -164,4 +170,5 @@ struct AirWidget_Previews_medium: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
+#endif
 

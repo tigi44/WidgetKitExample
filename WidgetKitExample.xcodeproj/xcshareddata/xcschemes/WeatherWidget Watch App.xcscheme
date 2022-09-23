@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-               BuildableName = "WidgetKitExample.app"
-               BlueprintName = "WidgetKitExample"
+               BlueprintIdentifier = "0EADF13028DD971700F58320"
+               BuildableName = "WeatherWidget Watch App.app"
+               BlueprintName = "WeatherWidget Watch App"
                ReferencedContainer = "container:WidgetKitExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E395E4F25DCE52B00019BAC"
-               BuildableName = "WidgetKitExampleTests.xctest"
-               BlueprintName = "WidgetKitExampleTests"
-               ReferencedContainer = "container:WidgetKitExample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E395E5A25DCE52B00019BAC"
-               BuildableName = "WidgetKitExampleUITests.xctest"
-               BlueprintName = "WidgetKitExampleUITests"
-               ReferencedContainer = "container:WidgetKitExample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-            BuildableName = "WidgetKitExample.app"
-            BlueprintName = "WidgetKitExample"
+            BlueprintIdentifier = "0EADF13028DD971700F58320"
+            BuildableName = "WeatherWidget Watch App.app"
+            BlueprintName = "WeatherWidget Watch App"
             ReferencedContainer = "container:WidgetKitExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-            BuildableName = "WidgetKitExample.app"
-            BlueprintName = "WidgetKitExample"
+            BlueprintIdentifier = "0EADF13028DD971700F58320"
+            BuildableName = "WeatherWidget Watch App.app"
+            BlueprintName = "WeatherWidget Watch App"
             ReferencedContainer = "container:WidgetKitExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1410"
-   wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0EB016B325E89EC300C586E2"
-               BuildableName = "EditableIntent.appex"
-               BlueprintName = "EditableIntent"
-               ReferencedContainer = "container:WidgetKitExample.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-               BuildableName = "WidgetKitExample.app"
-               BlueprintName = "WidgetKitExample"
+               BlueprintIdentifier = "0EADF13F28DD992000F58320"
+               BuildableName = "WeatherWidgetExtension Watch.appex"
+               BlueprintName = "WeatherWidgetExtension Watch"
                ReferencedContainer = "container:WidgetKitExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,16 +42,23 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-            BuildableName = "WidgetKitExample.app"
-            BlueprintName = "WidgetKitExample"
-            ReferencedContainer = "container:WidgetKitExample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "_XCWidgetKind"
+            value = ""
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "_XCWidgetDefaultView"
+            value = "timeline"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "_XCWidgetFamily"
+            value = "medium"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,16 +67,15 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0E395E3E25DCE52900019BAC"
-            BuildableName = "WidgetKitExample.app"
-            BlueprintName = "WidgetKitExample"
+            BlueprintIdentifier = "0EADF13F28DD992000F58320"
+            BuildableName = "WeatherWidgetExtension Watch.appex"
+            BlueprintName = "WeatherWidgetExtension Watch"
             ReferencedContainer = "container:WidgetKitExample.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
