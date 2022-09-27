@@ -219,6 +219,40 @@ struct WeatherWidgetEntryView : View {
         }
     }
     
+    @available(iOSApplicationExtension 16.0, *)
+    struct WeahterAccessoryCornerView: View {
+        var entry: WeatherWidgetProvider.Entry
+        
+        var body: some View {
+            ZStack {
+                AccessoryWidgetBackground()
+                
+                VStack {
+                    Image(systemName: entry.icon)
+                        .symbolRenderingMode(.multicolor)
+                        .widgetAccentable()
+                    
+                    Text(String(format: " %.1f °C", entry.temperature))
+                        .font(.caption2)
+                }
+            }
+            .widgetLabel(label: {
+                Gauge(value: entry.temperature, in: -10...10) {
+                    Text(String(format: " %.1f °C", entry.temperature))
+                } currentValueLabel: {
+                    Text("\(entry.temperature)")
+                } minimumValueLabel: {
+                    Text("-10")
+                        .foregroundColor(.blue)
+                } maximumValueLabel: {
+                    Text("10")
+                        .foregroundColor(.pink)
+                }
+                .tint(Gradient(colors: [.blue, .green, .pink]))
+            })
+        }
+    }
+    
     var body: some View {
         if #available(iOSApplicationExtension 16.0, *) {
             switch family {
@@ -229,7 +263,7 @@ struct WeatherWidgetEntryView : View {
             case .accessoryInline:
                 WeahterAccessoryInlineView(entry: entry)
             case .accessoryCorner:
-                WeahterAccessoryCircularView(entry: entry)
+                WeahterAccessoryCornerView(entry: entry)
             case .systemSmall:
                 WeahterSmallView(entry: entry)
             case .systemMedium:
