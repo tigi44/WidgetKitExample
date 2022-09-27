@@ -202,13 +202,18 @@ struct WeatherWidgetEntryView : View {
             ZStack {
                 AccessoryWidgetBackground()
                 
-                HStack {
-                    Image(systemName: entry.icon)
-                        .symbolRenderingMode(.multicolor)
-                        .widgetAccentable()
+                ViewThatFits {
+                    Label(String(format: " %.1f °C + LongTextLongTextLongText", entry.temperature),
+                          systemImage: entry.icon)
+                    .symbolRenderingMode(.multicolor)
                     
-                    Text(String(format: " %.1f °C", entry.temperature))
-                        .font(.title)
+//                    Label(String(format: " %.1f °C + LongText", entry.temperature),
+//                          systemImage: entry.icon)
+//                    .symbolRenderingMode(.multicolor)
+                    
+                    Label(String(format: " %.1f °C", entry.temperature),
+                          systemImage: entry.icon)
+                    .symbolRenderingMode(.multicolor)
                 }
             }
         }
